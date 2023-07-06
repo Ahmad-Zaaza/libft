@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:51:49 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/06 14:20:14 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/06 14:39:12 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len);
 char	*ft_strchr(const char *str, int c);
 
 char	*ft_strrchr(const char *str, int c);
+
+size_t	ft_strlcpy(char *restrict dest, char *restrict src, size_t dest_size);
 
 #endif
