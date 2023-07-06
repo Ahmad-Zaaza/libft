@@ -6,20 +6,19 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:11:01 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/04 18:25:55 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/06 10:23:02 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	// ft_memset(s, '\0', n);
-	while (n--)
-	{
-
-		*((unsigned char *)s)++ = '\0';
-	}
+	ft_memset(s, '\0', n);
+	// while (n--)
+	// {
+	// 	*(unsigned char *)s++ = '\0';
+	// }
 }
 
 // #include <stdio.h>
