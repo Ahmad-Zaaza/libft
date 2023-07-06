@@ -6,11 +6,11 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:12:00 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/04 15:12:39 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/06 09:46:09 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int i;
 

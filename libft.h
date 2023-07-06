@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:51:49 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/06 09:30:56 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/06 09:46:30 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_isascii(int c);
 
 int		ft_isprint(int c);
 
-int		ft_strlen(char *str);
+int		ft_strlen(const char *str);
 
 int		ft_toupper(int c);
 
@@ -40,5 +40,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, void *src, size_t n);
 
 char	*ft_strchr(const char *str, int c);
+
+char	*ft_strrchr(const char *str, int c);
 
 #endif
