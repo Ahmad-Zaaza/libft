@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:51:49 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/08 13:05:09 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/08 15:17:08 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ size_t	ft_strlcpy(char *restrict dest, char *restrict src, size_t dest_size);
 size_t	ft_strlcat(char *restrict dest, char *restrict src, size_t dest_size);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
