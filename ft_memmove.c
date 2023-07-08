@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 10:29:40 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/06 14:37:11 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/08 12:39:58 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		}
 	}
 	else
-	{
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
+		return (ft_memcpy(dest, src, len));
 	return (dest);
 }
 
