@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:37:38 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/06 14:49:47 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/09 17:30:42 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *restrict dest, char *restrict src, size_t dest_size)
 	size_t	i;
 
 	i = 0;
-	while (src[i] && i < dest_size)
+	while (src[i] && i < (dest_size - 1))
 	{
 		dest[i] = src[i];
 		i++;
