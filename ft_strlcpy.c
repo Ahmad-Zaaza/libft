@@ -6,7 +6,7 @@
 /*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:37:38 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/09 17:30:42 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/09 17:42:12 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 size_t	ft_strlcpy(char *restrict dest, char *restrict src, size_t dest_size)
 {
 	size_t	i;
+	size_t	src_len;
 
 	i = 0;
+	src_len = ft_strlen(src);
+	if (!dest_size)
+		return (src_len);
 	while (src[i] && i < (dest_size - 1))
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (src_len);
 }
 
 // #include <stdio.h>
