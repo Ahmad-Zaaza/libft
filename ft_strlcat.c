@@ -6,7 +6,7 @@
 /*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:51:45 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/09 17:20:38 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/09 18:55:22 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 size_t	ft_strlcat(char *restrict dest, char *restrict src, size_t dest_size)
 {
 	size_t	i;
-	size_t	j;
+	size_t	dest_len;
+	size_t	total_len;
 
 	i = 0;
-	j = ft_strlen(dest);
+	dest_len = ft_strlen(dest);
+	total_len = ft_strlen(src) + dest_len;
 	if (!dest_size)
 		return (ft_strlen(src));
-	if (!src[i])
-		return (j);
-	while (src[i] && j < (dest_size - 1))
+	if (dest_len > dest_size)
+		return (ft_strlen(src) + dest_size);
+	while (src[i] && dest_len < (dest_size - 1))
 	{
-		dest[j] = src[i];
-		j++;
-		i++;
+		dest[dest_len++] = src[i++];
 	}
-	while (j < (dest_size - 1))
+	while (dest_len < (dest_size - 1))
 	{
-		dest[j] = '\0';
-		j++;
+		dest[dest_len] = '\0';
+		dest_len++;
 	}
-	dest[j] = '\0';
-	return (j);
+	dest[dest_len] = '\0';
+	return (total_len);
 }
 // #include <stdio.h>
 // #include <string.h>
