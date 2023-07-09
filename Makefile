@@ -4,16 +4,23 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-OBJECTS = *.o
+SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+		ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c \
+		ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c
 
+OBJECTS = $(SRCS:%.c=%.o)
 
-.PHONY: clean 
+all: $(NAME)
 
-FILES = ft_atoi.c ft_bzero.c ft_isalnum.c is_alpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-		ft_memchr.c ft_memcmp.c ft_memcpy.c 
+.o.c: $(SRCS)
+	$(CC) $(CFLAGS) -L . -l ft.h -c $(SRCS)
 
-$(NAME) : $(FILES)
-		$(CC) $(CFLAGS) -L libft.h -c $(FILES)
+$(NAME) : $(OBJECTS)
+		ar -rcs $@ $?
 
-clean: $(OBJECTS)
-		rm -f $(NAME)
+.PHONY: all clean re fclean
+clean: 
+	rm -f $(OBJECTS)
+fclean:
+	rm -f $(NAME)
+RE: fclean all
