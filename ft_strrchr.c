@@ -6,7 +6,7 @@
 /*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 09:41:31 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/09 17:21:28 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/09 22:19:53 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ char	*ft_strrchr(const char *str, int c)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			found = i;
 		i++;
 	}
 	if (found >= 0)
 		return ((char *)(str + found));
-	if (c == '\0')
+	if ((char)c == str[i])
 		return ((char *)(str + i));
 	return (0);
 }
