@@ -21,6 +21,7 @@ $(NAME) : $(OBJECTS)
 .PHONY: all clean re fclean
 clean: 
 	rm -f $(OBJECTS)
+	
 fclean:
 	rm -f $(NAME)
 	
