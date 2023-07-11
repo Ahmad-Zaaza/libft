@@ -5,6 +5,7 @@
         "cstdlib": "c",
         "locale": "c",
         "ostream": "c",
-        "new": "c"
+        "new": "c",
+        "_types.h": "c"
     }
 }
