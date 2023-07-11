@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t dest_size)
+size_t ft_strlcat(char *dest, char *src, size_t dest_size)
 {
-	size_t	i;
-	size_t	dest_len;
-	size_t	total_len;
+	size_t i;
+	size_t dest_len;
+	size_t total_len;
 
 	i = 0;
 	dest_len = ft_strlen(dest);
-	if (!dest_size)
+	if (dest_size <= 0)
 		return (ft_strlen(src));
 	total_len = ft_strlen(src) + dest_len;
 	while (src[i] && dest_len < (dest_size - 1))
@@ -37,18 +37,22 @@ size_t	ft_strlcat(char *dest, char *src, size_t dest_size)
 	dest[dest_len] = '\0';
 	return (total_len);
 }
-// #include <stdio.h>
+#include <stdio.h>
 // #include <string.h>
 
-// int	main(void)
-// {
-// 	// char str[50] = " World";
-// 	char str2[12] = "Hello";
+int main(void)
+{
+	// char str[50] = " World";
+	char dest[30];
+	ft_memset(dest, 0, 30);
+	char *src = (char *)"AAAAAAAAA";
+	dest[0] = 'B';
 
-// 	printf("Ours: %lu\n", ft_strlcat(str2, "", 12));
-// 	printf("String after: %s\n", str2);
-// 	// printf("Original: %lu\n", strlcat(str2, "", 12));
-// 	// printf("String after: %s\n", str2);
+	ft_memset(dest, 'C', 5);
+	printf("Ours: %lu\n", ft_strlcat(dest, src, -1));
+	printf("String after: %s\n", dest);
+	// printf("Original: %lu\n", strlcat(str2, "", 12));
+	// printf("String after: %s\n", str2);
 
-// 	return (0);
-// }
+	return (0);
+}
