@@ -6,13 +6,14 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:51:49 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/11 10:43:36 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/11 12:37:04 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
 # include <string.h>
 
 int		ft_isalpha(int c);
@@ -60,5 +61,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(const char *s1);
 
 void	*ft_calloc(size_t count, size_t size);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

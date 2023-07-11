@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 10:38:37 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/11 13:49:57 by azaaza           ###   ########.fr       */
+/*   Created: 2023/07/11 12:06:48 by azaaza            #+#    #+#             */
+/*   Updated: 2023/07/11 15:55:46 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*mem;
+	char	*str;
+	size_t	s_len;
+	size_t	i;
 
-	if (size && (count) > UINT16_MAX / size)
+	i = 0;
+	s_len = ft_strlen(s);
+	if (start > s_len)
 	{
-		return (NULL);
+		len = 0;
 	}
-	mem = malloc(size * count);
-	if (!mem)
+	else if (len > (s_len - start))
+		len = s_len - start;
+	str = (char *)malloc(len + 1);
+	if (!str)
 		return (NULL);
-	ft_bzero(mem, size * count);
-	return (mem);
+	while (i < len)
+	{
+		str[i] = s[start + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
