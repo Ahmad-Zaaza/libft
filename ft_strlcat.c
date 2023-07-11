@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:51:45 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/09 22:07:44 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/11 09:46:54 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dest, char *src, size_t dest_size)
+size_t	ft_strlcat(char *dest, char *src, size_t dest_size)
 {
-	size_t i;
-	size_t dest_len;
-	size_t total_len;
+	size_t	i;
+	size_t	dest_len;
+	size_t	total_len;
 
 	i = 0;
 	dest_len = ft_strlen(dest);
@@ -37,22 +37,23 @@ size_t ft_strlcat(char *dest, char *src, size_t dest_size)
 	dest[dest_len] = '\0';
 	return (total_len);
 }
-#include <stdio.h>
-// #include <string.h>
+// #include <stdio.h>
 
-int main(void)
-{
-	// char str[50] = " World";
-	char dest[30];
-	ft_memset(dest, 0, 30);
-	char *src = (char *)"AAAAAAAAA";
-	dest[0] = 'B';
+// // #include <string.h>
 
-	ft_memset(dest, 'C', 5);
-	printf("Ours: %lu\n", ft_strlcat(dest, src, -1));
-	printf("String after: %s\n", dest);
-	// printf("Original: %lu\n", strlcat(str2, "", 12));
-	// printf("String after: %s\n", str2);
+// int	main(void)
+// {
+// 	// char str[50] = " World";
+// 	char dest[30];
+// 	ft_memset(dest, 0, 30);
+// 	char *src = (char *)"AAAAAAAAA";
+// 	dest[0] = 'B';
 
-	return (0);
-}
+// 	ft_memset(dest, 'C', 5);
+// 	printf("Ours: %lu\n", ft_strlcat(dest, src, -1));
+// 	printf("String after: %s\n", dest);
+// 	// printf("Original: %lu\n", strlcat(str2, "", 12));
+// 	// printf("String after: %s\n", str2);
+
+// 	return (0);
+// }
