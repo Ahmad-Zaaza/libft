@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*mem;
 
-	if (size && (count) > UINT16_MAX / size)
+	if (size && (count) > __UINT16_MAX__ / size)
 	{
 		return (NULL);
 	}

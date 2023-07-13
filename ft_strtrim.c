@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static	is_match(char const *set, char c)
+static int is_match(char const *set, char c)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (set[i])
@@ -26,40 +26,65 @@ static	is_match(char const *set, char c)
 	return (0);
 }
 
-static int	get_len(char const *s1, char const *set)
-{
-	int	i;
-	int	len;
-	int	is_last;
-
-	i = 0;
-	len = 0;
-	is_last = 1;
-	// while (s1[i])
-	// {
-	// 	if (!is_match(set, s1[i]))
-	// 	{
-	// 	}
-	// }
-	while (is_match(set, s1[i]))
-		i++;
-	while (s1[i] && !is_match(set, s1[i]))
-	{
-		i++;
-		len++;
-	}
-	while (is_match(set, s1[i]))
-		i++;
-	is_last = 1;
-	return (len);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
+static int get_len(char const *s1, char const *set, size_t *start, size_t *end)
 {
 	int i;
+	int str_len;
+
+	i = 0;
+	str_len = ft_strlen(s1);
+
+	while (s1[i])
+	{
+		if (!is_match(set, s1[i]))
+		{
+			*start = i;
+			break;
+		}
+		i++;
+	}
+	while (s1[str_len - 1])
+	{
+		if (!is_match(set, s1[str_len - 1]))
+		{
+			*end = str_len;
+			break;
+		}
+		str_len--;
+	}
+
+	return (*end - *start);
+}
+
+char *ft_strtrim(char const *s1, char const *set)
+{
+	size_t i;
+	size_t start;
+	size_t end;
+	size_t len;
 	char *str;
 
-	str = (char *)malloc(get_len(s1, set));
+	start = 0;
+	end = 0;
+	i = 0;
+	len = get_len(s1, set, &start, &end);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
+	while (i < len)
+	{
+		str[i] = s1[start + i];
+		i++;
+	}
+	str[i] = '\0';
+	return str;
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	printf("%s\n", ft_strtrim("__.._Ahma.d_..", "_."));
+
+// 	return (0);
+// }
