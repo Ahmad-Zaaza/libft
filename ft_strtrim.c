@@ -6,7 +6,7 @@
 /*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:11:22 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/14 21:11:23 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/15 01:10:24 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ static int	get_len(char const *s1, char const *set, size_t *start, size_t *end)
 
 	i = 0;
 	str_len = ft_strlen(s1);
-	while (s1[i])
+	if (!str_len)
+		return (0);
+	while (i < str_len)
 	{
 		if (!is_match(set, s1[i]))
 		{
