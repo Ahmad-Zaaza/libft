@@ -2,23 +2,19 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2023/07/11 16:14:37 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/11 17:10:40 by azaaza           ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/14 21:11:22 by ahmadzaaza        #+#    #+#             */
+/*   Updated: 2023/07/14 21:11:23 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 static int	is_match(char const *set, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -30,15 +26,13 @@ static int	is_match(char const *set, char c)
 	return (0);
 }
 
-static int	get_len(char const *s1, char const *set, size_t *start,
-		size_t *end)
+static int	get_len(char const *s1, char const *set, size_t *start, size_t *end)
 {
-	int i;
-	int str_len;
+	int	i;
+	int	str_len;
 
 	i = 0;
 	str_len = ft_strlen(s1);
-
 	while (s1[i])
 	{
 		if (!is_match(set, s1[i]))
@@ -57,17 +51,16 @@ static int	get_len(char const *s1, char const *set, size_t *start,
 		}
 		str_len--;
 	}
-
 	return (*end - *start);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
-	size_t start;
-	size_t end;
-	size_t len;
-	char *str;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+	size_t	len;
+	char	*str;
 
 	start = 0;
 	end = 0;

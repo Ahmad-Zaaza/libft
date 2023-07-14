@@ -2,23 +2,19 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2023/07/14 21:04:48 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/14 21:04:48 by ahmadzaaza       ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/14 21:09:00 by ahmadzaaza        #+#    #+#             */
+/*   Updated: 2023/07/14 21:09:04 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 static int	count_int(int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n < 1)
@@ -33,7 +29,7 @@ static int	count_int(int n)
 
 long long	abs_value(long long nb)
 {
-	long long nbr;
+	long long	nbr;
 
 	nbr = 1;
 	if (nb < 0)
@@ -45,10 +41,10 @@ long long	abs_value(long long nb)
 
 char	*ft_itoa(int n)
 {
-	unsigned int nbr;
-	char *str;
-	int count;
-	int minus;
+	unsigned int	nbr;
+	char			*str;
+	int				count;
+	int				minus;
 
 	minus = 0;
 	if (n < 0)

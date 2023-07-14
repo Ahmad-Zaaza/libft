@@ -2,19 +2,15 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2023/07/14 20:49:20 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/14 20:49:20 by ahmadzaaza       ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/14 21:09:39 by ahmadzaaza        #+#    #+#             */
+/*   Updated: 2023/07/14 21:09:41 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	is_match(char delimeter, char c)
 {
@@ -23,8 +19,8 @@ static int	is_match(char delimeter, char c)
 
 static char	*create_string(char const *s, int start, int finish)
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	str = (char *)malloc(finish - start + 1);
@@ -44,14 +40,13 @@ static char	*create_string(char const *s, int start, int finish)
 
 static int	get_count(char const *s, char delimeter)
 {
-	int count;
-	int i;
-	int in;
+	int	count;
+	int	i;
+	int	in;
 
 	count = 0;
 	i = 0;
 	in = 0;
-
 	while (s[i])
 	{
 		if (!is_match(delimeter, s[i]))
@@ -71,10 +66,10 @@ static int	get_count(char const *s, char delimeter)
 
 char	**ft_split(char const *s, char c)
 {
-	char **arr;
-	int i;
-	int j;
-	int index;
+	char	**arr;
+	int		i;
+	int		j;
+	int		index;
 
 	i = 0;
 	j = 0;
