@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2023/07/08 12:42:16 by azaaza            #+#    #+#             */
 /*   Updated: 2023/07/09 17:18:18 by ahmadzaaza       ###   ########.fr       */
 /*                                                                            */
@@ -12,11 +15,12 @@
 
 #include "libft.h"
 
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	needle_len;
+	size_t i;
+	size_t j;
+	size_t needle_len;
 
 	i = 0;
 	j = 0;

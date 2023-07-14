@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2023/07/11 16:14:37 by azaaza            #+#    #+#             */
 /*   Updated: 2023/07/11 17:10:40 by azaaza           ###   ########.fr       */
 /*                                                                            */
@@ -12,7 +15,8 @@
 
 #include "libft.h"
 
-static int is_match(char const *set, char c)
+
+static int	is_match(char const *set, char c)
 {
 	int i;
 
@@ -26,7 +30,8 @@ static int is_match(char const *set, char c)
 	return (0);
 }
 
-static int get_len(char const *s1, char const *set, size_t *start, size_t *end)
+static int	get_len(char const *s1, char const *set, size_t *start,
+		size_t *end)
 {
 	int i;
 	int str_len;
@@ -39,7 +44,7 @@ static int get_len(char const *s1, char const *set, size_t *start, size_t *end)
 		if (!is_match(set, s1[i]))
 		{
 			*start = i;
-			break;
+			break ;
 		}
 		i++;
 	}
@@ -48,7 +53,7 @@ static int get_len(char const *s1, char const *set, size_t *start, size_t *end)
 		if (!is_match(set, s1[str_len - 1]))
 		{
 			*end = str_len;
-			break;
+			break ;
 		}
 		str_len--;
 	}
@@ -56,7 +61,7 @@ static int get_len(char const *s1, char const *set, size_t *start, size_t *end)
 	return (*end - *start);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t i;
 	size_t start;
@@ -77,7 +82,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		i++;
 	}
 	str[i] = '\0';
-	return str;
+	return (str);
 }
 
 // #include <stdio.h>
