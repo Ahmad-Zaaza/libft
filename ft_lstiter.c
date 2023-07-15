@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 15:31:15 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/15 17:15:28 by azaaza           ###   ########.fr       */
+/*   Created: 2023/07/15 17:28:14 by azaaza            #+#    #+#             */
+/*   Updated: 2023/07/15 17:31:05 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;
 
-	if (*lst && del)
+	if (lst)
 	{
-		tmp = *lst;
-		while (*lst)
+		tmp = lst;
+		while (tmp)
 		{
-			tmp = *lst;
-			*lst = (*lst)->next;
-			del(tmp->content);
-			free(tmp);
+			f(tmp->content);
+			tmp = tmp->next;
 		}
-		lst = NULL;
 	}
 }
-
-// #include "stdio.h"
-
-// int	main(void)
-// {
-// 	t_list *l = ft_lstnew(strdup("nyancat"));
-
-// 	l->next = ft_lstnew(strdup("#TEST#"));
-// 	ft_lstclear(&l, &ft_lstdelone);
-// 	write(2, "", 1);
-// 	printf();
-// 	return (0);
-// }
