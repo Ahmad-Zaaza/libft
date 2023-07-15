@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:08:43 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/15 15:29:54 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/15 15:31:06 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,7 @@ t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *node);
 
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
+
+void				ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif
