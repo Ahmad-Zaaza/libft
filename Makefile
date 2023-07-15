@@ -10,22 +10,28 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c 
 		ft_strdup.c ft_calloc.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-OBJECTS = $(SRCS:%.c=%.o)
+SRCS_B = ft_lstnew.c ft_lstadd_front.c
+
+OBJECTS = $(SRCS:%.c=%.o) 
+OBJECTS_B = $(SRCS_B:%.c=%.o)
+
 
 all: $(NAME)
 
-.o.c: $(SRCS)
-	$(CC) $(CFLAGS) -L . -l ft.h -c $(SRCS)
+.o.c: $(SRCS) $(SRCS_B)
+	$(CC) $(CFLAGS) -L . -l ft.h -c $(SRCS) $(SRCS_B)
 
 $(NAME) : $(OBJECTS)
 		ar -rcs $@ $?
 
-.PHONY: all clean re fclean
+bonus : $(OBJECTS_B)
+		ar -rcs $(NAME) $^
+
+.PHONY: all clean re fclean bonus
 clean: 
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(OBJECTS_B)
 	
 fclean: clean
 	rm -f $(NAME)
-	
-	
+		
 re: fclean all
