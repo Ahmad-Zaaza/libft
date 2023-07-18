@@ -5,102 +5,79 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/14 21:09:39 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/18 09:58:00 by azaaza           ###   ########.fr       */
+/*   Created: 2023/07/18 16:20:43 by azaaza            #+#    #+#             */
+/*   Updated: 2023/07/18 16:23:33 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_match(char delimeter, char c)
+static int	ft_count_word(char const *s, char c)
 {
-	return (c == delimeter);
-}
-
-static char	*create_string(char const *s, int start, int finish)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = (char *)malloc(finish - start + 1);
-	if (!str)
-	{
-		free(str);
-		return (NULL);
-	}
-	while (start < finish)
-	{
-		str[i] = s[start++];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-static int	get_count(char const *s, char delimeter)
-{
-	int	count;
 	int	i;
-	int	in;
+	int	word_count;
 
-	count = 0;
 	i = 0;
-	in = 0;
-	while (s[i])
+	word_count = 0;
+	while (s && s[i])
 	{
-		if (!is_match(delimeter, s[i]))
+		if (s[i] != c)
 		{
-			if (!in)
-			{
-				in = 1;
-				count++;
-			}
+			word_count++;
+			while (s[i] != c && s[i])
+				i++;
 		}
 		else
-			in = 0;
+			i++;
+	}
+	return (word_count);
+}
+
+static int	ft_wordsize(char const *str, char c, int i)
+{
+	int	size;
+
+	size = 0;
+	while (str[i] != c && str[i])
+	{
+		size++;
 		i++;
 	}
-	return (count);
+	return (size);
+}
+
+static void	ft_free(char **strs, int j)
+{
+	while (j-- > 0)
+		free(strs[j]);
+	free(strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	int		i;
 	char	**arr;
-	unsigned int		i;
-	unsigned int		j;
-	int		index;
+	int		size;
+	int		j;
 
 	i = 0;
-	j = 0;
-	index = -1;
-	arr = (char **)malloc((get_count(s, c) + 1) * sizeof(char *));
+	j = -1;
+	arr = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	while (i <= ft_strlen(s))
+	while (++j < ft_count_word(s, c))
 	{
-		if (!is_match(c, s[i]) && index < 0)
-			index = i;
-		else if ((is_match(c, s[i]) || i == ft_strlen(s)) && index >= 0)
+		while (s[i] == c)
+			i++;
+		size = ft_wordsize(s, c, i);
+		arr[j] = ft_substr(s, i, size);
+		if (!arr[j])
 		{
-			arr[j++] = create_string(s, index, i);
-			index = -1;
+			ft_free(arr, j);
+			return (NULL);
 		}
-		i++;
+		i += size;
 	}
 	arr[j] = NULL;
 	return (arr);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-
-//     char *str = "hello!zzzzzzzz";
-//     char **arr = ft_split(str, 'z');
-//     for (size_t i = 0; arr[i]; i++)
-//     {
-//         printf("%s\n", arr[i]);
-//     }
-// }

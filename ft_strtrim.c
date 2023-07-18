@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:11:22 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/15 01:10:24 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/18 11:39:20 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static int	get_len(char const *s1, char const *set, size_t *start, size_t *end)
 
 	i = 0;
 	str_len = ft_strlen(s1);
-	if (!str_len)
-		return (0);
 	while (i < str_len)
 	{
 		if (!is_match(set, s1[i]))

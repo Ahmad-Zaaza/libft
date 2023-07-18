@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:14:41 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/15 12:39:42 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/18 11:36:38 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *lst;
+	t_list	*lst;
 
 	lst = (t_list *)malloc(sizeof(t_list));
 	if (!lst)
