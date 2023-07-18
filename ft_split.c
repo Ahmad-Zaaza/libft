@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:09:39 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/14 21:09:41 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/18 09:58:00 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static int	get_count(char const *s, char delimeter)
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	int		i;
-	int		j;
+	unsigned int		i;
+	unsigned int		j;
 	int		index;
 
 	i = 0;

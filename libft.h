@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:08:43 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/15 17:33:18 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/18 09:57:10 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <string.h>
+# include <sys/_types/_size_t.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -33,7 +34,7 @@ int					ft_isascii(int c);
 
 int					ft_isprint(int c);
 
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 
 int					ft_toupper(int c);
 
