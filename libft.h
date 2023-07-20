@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:08:43 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/18 09:57:10 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/20 11:20:27 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <string.h>
-# include <sys/_types/_size_t.h>
 # include <unistd.h>
 
 typedef struct s_list

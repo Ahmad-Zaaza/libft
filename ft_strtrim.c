@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:11:22 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/18 11:39:20 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/20 11:20:38 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	printf("%s\n", ft_strtrim("__.._Ahma.d_..", "_."));
-
-// 	return (0);
-// }
