@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmadzaaza <ahmadzaaza@student.42.fr>      +#+  +:+       +#+        */
+/*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 09:28:02 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/14 21:09:48 by ahmadzaaza       ###   ########.fr       */
+/*   Updated: 2023/07/20 12:26:22 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,3 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)(str + i));
 	return (0);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char str[50];
-// 	char str2[50];
-
-// 	strcpy(str, "This is string.h library function");
-// 	strcpy(str2, "This is string.h library function");
-// 	puts(str);
-// 	puts(str2);
-
-// 	printf("Ours: %s\n", ft_strchr(str, 'z'));
-// 	printf("The Original: %s\n", strchr(str, 'z'));
-
-// 	return (0);
-// }
