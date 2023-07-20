@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 15:31:15 by azaaza            #+#    #+#             */
-/*   Updated: 2023/07/18 11:36:19 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/20 12:23:22 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
+	if (!lst)
+		return ;
 	if (*lst && del)
 	{
 		while (*lst)
