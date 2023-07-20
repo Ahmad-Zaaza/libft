@@ -6,7 +6,7 @@
 /*   By: azaaza <azaaza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:11:22 by ahmadzaaza        #+#    #+#             */
-/*   Updated: 2023/07/20 11:20:38 by azaaza           ###   ########.fr       */
+/*   Updated: 2023/07/20 12:13:47 by azaaza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	start = 0;
 	end = 0;
 	i = 0;
